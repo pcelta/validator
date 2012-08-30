@@ -38,10 +38,27 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
         </div>
 
-        <h1>Melody Validation <a href="http://travis-ci.org/marcelsud/melody-validation"><img src="https://secure.travis-ci.org/marcelsud/melody-validation.png" alt="Build Status"></a>
-</h1>
+        <h1>Melody Validation </h1>
 
-<h1></h1>
+<p><a href="http://travis-ci.org/marcelsud/melody-validation"><img src="https://secure.travis-ci.org/marcelsud/melody-validation.png" alt="Build Status"></a></p>
+
+<p>Melody Validation is a set of validation rules with a easy way to customize and test your validations.</p>
+
+<div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span>
+<span class="k">use</span> <span class="nx">Melody\Validation\Validator</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Melody\Validation\Constraints\EmailConstraint</span><span class="p">;</span>
+
+<span class="k">require_once</span> <span class="nx">__DIR__</span><span class="o">.</span><span class="s1">'/../vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="nv">$email</span> <span class="o">=</span> <span class="s2">"test...@mail.com"</span><span class="p">;</span>
+<span class="nv">$validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Validator</span><span class="p">();</span>
+<span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">addConstraint</span><span class="p">(</span><span class="k">new</span> <span class="nx">EmailConstraint</span><span class="p">());</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$violations</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">getViolations</span><span class="p">();</span>
+<span class="p">}</span>
+
+</pre></div>
       </section>
 
     </div>
