@@ -54,7 +54,7 @@
 <span class="nv">$validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Validator</span><span class="p">();</span>
 <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">addConstraint</span><span class="p">(</span><span class="k">new</span> <span class="nx">EmailConstraint</span><span class="p">());</span>
 
-<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$email</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">validate</span><span class="p">(</span><span class="nv">$email</span><span class="p">))</span> <span class="p">{</span>
     <span class="nv">$violations</span> <span class="o">=</span> <span class="nv">$validator</span><span class="o">-&gt;</span><span class="na">getViolations</span><span class="p">();</span>
 <span class="p">}</span>
 
